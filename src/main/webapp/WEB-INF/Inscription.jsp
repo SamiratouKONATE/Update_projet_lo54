@@ -24,8 +24,9 @@
                         <div class="indent">
                             <div id="wrapper">
                                 <h2 class="p0">Formulaire d'inscription</h2>
-                                <label>
+                                <label style="color:green;font-size:12px;">
                                     <c:out value="${resultat}"/>
+                                    
                                 </label>
                                     <div id="steps">
                                         <form id="formElem" name="formElem" action="<c:url value="/inscription"/>" method="post">
@@ -33,28 +34,32 @@
                                               <legend>Inscription à une session</legend>
                                               <p>
                                                   <label for="nom">Nom <a style="color:red;font-size:24px;">*</a></label>
-                                                  <input id="nom" name="nom" value="<c:out value="${ client.firstname}"/>" required/>
-                                                  <label >${erreurs['nom']}</label>
+                                                  <input id="nom" name="nom" value="" required/>
+                                                  <label ><c:out value="${erreurs['nom']}"/></label>
                                               </p>
                                               
                                               <p>
                                                   <label for="prenom">Prenom <a style="color:red;font-size:24px;">*</a></label>
                                                   <input id="prenom" name="prenom" required/>
+                                                  <label ><c:out value="${erreurs['prenom']}"/></label>
                                               </p>
                                               
                                               <p>
                                                   <label for="address">Addresse <a style="color:red;font-size:24px;">*</a></label>
                                                   <input id="address" name="address" required/>
+                                                  <label ><c:out value="${erreurs['address']}"/></label>
                                               </p>
                                               
                                               <p>
                                                   <label for="phone">Numéro de téléphone <a style="color:red;font-size:24px;">*</a></label>
                                                   <input id="phone" name="phone" required/>
+                                                  <label ><c:out value="${erreurs['phone']}"/></label>
                                               </p>
                                               
                                               <p>
                                                   <label for="email">Email</label>
-                                                  <input id="email" name="email" placeholder="example@utbm.fr" type="email" AUTOCOMPLETE=ON required/>
+                                                  <input id="email" name="email" placeholder="example@utbm.fr" type="email" AUTOCOMPLETE=ON />
+                                                  <label ><c:out value="${erreurs['email']}"/></label>
                                               </p>
                                               
                                           </fieldset>
